@@ -16,7 +16,7 @@ try:
     station = None
     uicCode = "8400058"
     dateTime = n
-    maxJourneys = "40"
+    maxJourneys = "1"
     url = "https://gateway.apiportal.ns.nl/reisinformatie-api/api/v2/arrivals?lang=" + lang + "&uicCode=" + uicCode + "&dateTime=" + dateTime + "&maxJourneys=" + maxJourneys + ""
 
     hdr ={
@@ -29,9 +29,10 @@ try:
 
     req.get_method = lambda: 'GET'
     response = urllib.request.urlopen(req)
-    print(response.getcode())
-    print(response.info())
-    print(response.read())
+    # print(response.getcode())
+    # print(response.info())
+    Response_String = trytostring(response.read()).strip("'b")
+    print(Response_String)
     
     # info = {
     #     "allinfo": json.loads(response.read())
@@ -39,9 +40,8 @@ try:
     # with open("info.json", "w") as outfile:
     #     json.dump(info, outfile)
 
-    pywhatkit.sendwhatmsg_to_group_instantly(WhatsApp_GroupId, "succesfull")
+    # pywhatkit.sendwhatmsg_to_group_instantly(WhatsApp_GroupId, trytostring(response.read()))
     print("succesfull")
 except Exception as e:
     print(e)
     print("failed")
-
