@@ -40,7 +40,7 @@ try:
     # with open("info.json", "w") as outfile:
     #     json.dump(info, outfile)
 
-    # pywhatkit.sendwhatmsg_to_group_instantly(WhatsApp_GroupId, trytostring(response.read()))
+    pywhatkit.sendwhatmsg_to_group_instantly(WhatsApp_GroupId, Response_String)
     print("succesfull")
 except Exception as e:
     print(e)
