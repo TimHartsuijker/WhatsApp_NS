@@ -1,0 +1,30 @@
+{
+    "payload": {
+        "source": "PPV",
+        "arrivals": [
+            {
+                "origin": "Utrecht Centraal",
+                "name": "NS  5679",
+                "plannedDateTime": "2024-12-11T22:34:00+0100",
+                "plannedTimeZoneOffset": 60,
+                "actualDateTime": "2024-12-11T22:34:00+0100",
+                "actualTimeZoneOffset": 60,
+                "plannedTrack": "1",
+                "actualTrack": "1",
+                "product": {
+                    "number": "5679",
+                    "categoryCode": "SPR",
+                    "shortCategoryName": "NS Sprinter",
+                    "longCategoryName": "Sprinter",
+                    "operatorName": "NS",
+                    "operatorCode": "NS",
+                    "type": "TRAIN"
+                },
+                "trainCategory": "SPR",
+                "cancelled": false,
+                "messages": [],
+                "arrivalStatus": "INCOMING"
+            }
+        ]
+    }
+}
