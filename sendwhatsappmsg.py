@@ -5,7 +5,7 @@ from tryto import trytostring
 class message():
 
     def __init__(self, message):
-        self.GroupId = WhatsApp_GroupId_tw
+        self.GroupId = WhatsApp_GroupId_kkk
         self.message = message
 
     

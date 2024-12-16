@@ -22,8 +22,6 @@ class reisinformatie():
 
         req.get_method = lambda: 'GET'
         response = urllib.request.urlopen(req)
-        # print(response.getcode())
-        # print(response.info())
         Response_String = trytostring(response.read()).strip("'b")
 
         with open("response.json", "w", encoding="utf-8") as file:
@@ -47,13 +45,8 @@ class reisinformatie():
         for arrival in arrivals:
             result = [
                 arrival.get("origin"),
-                arrival.get("name"),
-                arrival.get("plannedDateTime"),
                 arrival.get("actualDateTime"),
-                arrival.get("plannedTrack"),
                 arrival.get("actualTrack"),
-                arrival.get("cancelled"),
-                arrival.get("messages", [])
             ]
             results.append(result)
 

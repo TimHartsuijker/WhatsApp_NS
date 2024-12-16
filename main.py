@@ -1,14 +1,23 @@
-import json
 import sendwhatsappmsg
 import reisinformatieAPI
+from tryto import trytostring
 
 lang = "nl"
 uicCode = "8400216"
-maxJourneys = "1"
+maxJourneys = "2"
    
 reis_informatie = reisinformatieAPI.reisinformatie(lang, uicCode, maxJourneys)
 
-reis_informatie.get_reis_informatie()
+ri = reis_informatie.get_reis_informatie()
 
-new_message = sendwhatsappmsg.message(reis_informatie.get_reis_informatie())
-new_message.sendwhatmsg_to_group_instantly()
+msg = ""
+
+for sublist in ri:
+    for element in sublist:
+        msg += "\n" + trytostring(element)
+    msg += "\n"
+
+print(msg)
+
+# new_message = sendwhatsappmsg.message(msg)
+# new_message.sendwhatmsg_to_group_instantly()
